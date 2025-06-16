@@ -100,7 +100,7 @@ export default class IdeaBoardExerciseBoard {
       return;
     }
 
-    ideaBoardEditorLibrary.on('ready', () => {
+    const handleLibraryReady = () => {
       /*
        * This gets called twice, so does H5P Editor core seems to load the widgets twice???
        * Or is this widget itself loaded twice?
@@ -115,7 +115,16 @@ export default class IdeaBoardExerciseBoard {
         this.toggleIdeaBoardBoard();
       });
       this.toggleIdeaBoardBoard();
-    });
+    };
+
+    if (!ideaBoardEditorLibrary.children) {
+      ideaBoardEditorLibrary.on('ready', () => {
+        handleLibraryReady();
+      });
+    }
+    else {
+      handleLibraryReady();
+    }
   }
 
   /**
