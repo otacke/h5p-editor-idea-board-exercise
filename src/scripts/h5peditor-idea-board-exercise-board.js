@@ -115,6 +115,7 @@ export default class IdeaBoardExerciseBoard {
         this.toggleIdeaBoardBoard();
       });
       this.toggleIdeaBoardBoard();
+      this.initializeContentTitleBinding();
     };
 
     if (!ideaBoardEditorLibrary.children) {
@@ -132,5 +133,59 @@ export default class IdeaBoardExerciseBoard {
    */
   toggleIdeaBoardBoard() {
     this.ideaBoardEditor.toggleBoardVisibility(!this.usePreviousContentsField.value);
+  }
+
+  /**
+   * Initialize content title binding.
+   */
+  initializeContentTitleBinding() {
+    this.ideaBoardEditor.on('titleChanged', (event) => {
+      this.setVerticalTabTitle(event.data.title);
+    });
+    this.setVerticalTabTitle(this.ideaBoardEditor.getCoreTitleFieldTitle());
+  }
+
+  /**
+   * Determine at what position this board is in the list of Idea Board boards.
+   * Workaround for VerticalTabs widget not providing anything useful from the outside.
+   * @returns {number} Index in the list, or -1 if not found.
+   */
+  determineIndexInList() {
+    let indexInList = -1;
+
+    this.parent.forEachChild((child, index) => {
+      if (child === this) {
+        indexInList = index;
+        return false;
+      }
+    });
+
+    return indexInList;
+  }
+
+  /**
+   * Set the title of the vertical tab for this board.
+   * Workaround for VerticalTabs widget not providing anything useful from the outside.
+   * @param {string} title Title to set, defaults to the parent entity's title.
+   */
+  setVerticalTabTitle(title = this.parent.getEntity()) {
+    const panelIndex = this.determineIndexInList();
+
+    const tabListElement = this.$container[0].closest('.h5p-vtab-wrapper').querySelector('ol.h5p-ul');
+    if (!tabListElement) {
+      return;
+    }
+
+    const relatedPanelElement = tabListElement.children[panelIndex];
+    if (!relatedPanelElement) {
+      return;
+    }
+
+    const labelElement = relatedPanelElement.querySelector('.h5p-label');
+    if (!labelElement) {
+      return;
+    }
+
+    labelElement.textContent = title;
   }
 }
