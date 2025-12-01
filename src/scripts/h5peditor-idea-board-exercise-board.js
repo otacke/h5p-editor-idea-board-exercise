@@ -1,3 +1,5 @@
+import { translate } from '@services/util-h5p.js';
+
 /** Class for IdeaBoardExercise H5P widget */
 export default class IdeaBoardExerciseBoard {
 
@@ -19,6 +21,8 @@ export default class IdeaBoardExerciseBoard {
 
     // Let parent handle ready callbacks of children
     this.passReadies = true;
+
+    IdeaBoardExerciseBoard.showGuidedTour = true;
 
     // DOM
     this.$container = H5P.jQuery('<div>', { class: 'h5peditor-idea-board-exercise-board' });
@@ -63,6 +67,8 @@ export default class IdeaBoardExerciseBoard {
    */
   remove() {
     this.$container.get(0).remove();
+
+    H5PEditor.IdeaBoardExerciseBoard.GuidedTours.remove();
   }
 
   /**
@@ -82,6 +88,32 @@ export default class IdeaBoardExerciseBoard {
     this.passReadies = false;
 
     this.initializeShowHideIdeaBoardBoard();
+
+    if (IdeaBoardExerciseBoard.showGuidedTour) {
+      this.injectGuidedTourButton();
+      this.startGuidedTour();
+    }
+  }
+
+  /**
+   * Inject guided tour button into the editor UI.
+   */
+  injectGuidedTourButton() {
+    const tourParent = this.$container[0].closest('.tree').querySelector('.field-name-extraTitle');
+    if (!tourParent) {
+      return;
+    }
+
+    const tourButton = document.createElement('button');
+    tourButton.className = 'h5peditor-idea-board-exercise-start-guided-tour';
+    tourButton.innerHTML = translate('tourButtonStart');
+    tourButton.addEventListener('click', (event) => {
+      window.requestAnimationFrame(() => {
+        this.startGuidedTour(true);
+        event.preventDefault();
+      });
+    });
+    tourParent.appendChild(tourButton);
   }
 
   /**
@@ -187,5 +219,24 @@ export default class IdeaBoardExerciseBoard {
     }
 
     labelElement.textContent = title;
+  }
+
+  /**
+   * Disable the guided tour for all instances of this board.
+   */
+  static disableGuidedTour() {
+    IdeaBoardExerciseBoard.showGuidedTour = false;
+  }
+
+  /**
+   * Start the guided tour.
+   * @param {boolean} force Whether to force start the tour again if already seen.
+   */
+  startGuidedTour(force) {
+    if (!IdeaBoardExerciseBoard.showGuidedTour) {
+      return;
+    }
+
+    H5PEditor.IdeaBoardExerciseBoard.GuidedTours.start(0, force || false, translate);
   }
 }

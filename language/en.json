@@ -1,0 +1,15 @@
+{
+  "libraryStrings": {
+    "tourButtonStart": "Tour",
+    "tourButtonExit": "Exit",
+    "tourButtonDone": "Done",
+    "tourButtonBack": "Back",
+    "tourButtonNext": "Next",
+    "tourWelcome": "<p>This tour guides you through the most important features of the Idea Board Exercise.</p><p>Start this tour at any time by pressing the Tour button in the top right corner</p><p>Press <strong>\"Exit\"</strong> to skip this tour or press <strong>\"Next\"</strong> to continue.</p>",
+    "tourTaskDescription": "<p>Add your <strong>task description</strong> here. It will be shown next to the board area.</p><p>If your task consists of several steps, you can optionally choose whether the <strong>content</strong> from the previous board should be <strong>reused</strong> from the second board onwards. If so, activate the option.</p>",
+    "tourTitleHeadline": "<p>Enter a <strong>title</strong> and <strong>headline</strong> for your exercise and configure the board area.</p><p>You can design the <strong>background</strong> (color, image), select the <strong>card type</strong> (text, image, audio, video) that learners can use, and <strong>create cards</strong> on the board yourself using the icons at the top right of the board.</p>",
+    "tourCompletionConditions": "For multi-step tasks, you can set <strong>completion conditions</strong> that must be met before learners can move on to the next step.",
+    "tourAddIdeaBoard": "<p>To create multi-step tasks, you can <strong>add additional boards</strong>.</p>",
+    "tourAddSummaryScreen": "<p>Optionally, you can <strong>insert any other H5P element</strong> at the end of the exercise.</p>"
+  }
+}

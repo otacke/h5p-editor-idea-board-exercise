@@ -1,0 +1,40 @@
+[
+  {
+    "steps": [
+      {
+        "text": "tourWelcome",
+        "attachTo": { "element": ".h5p-ideaboardexercise-editor [for^=\"field-boards\"]", "on": "top" },
+        "noArrow": true,
+        "scrollTo": true
+      },
+      {
+        "text": "tourTaskDescription",
+        "attachTo": { "element": ".field-name-taskDescription", "on": "bottom" },
+        "scrollTo": true
+      },
+      {
+        "text": "tourTitleHeadline",
+        "attachTo": { "element": ".h5p-ideaboard-editor .field-name-extraTitle", "on": "top" },
+        "scrollTo": true
+      },
+      {
+        "text": "tourCompletionConditions",
+        "attachTo": { "element": ".field-name-requiresCompletionToProgress input", "on": "top" },
+        "scrollTo": true
+      },
+      {
+        "text": "tourAddIdeaBoard",
+        "attachTo": { "element": ".h5p-ideaboardexercise-editor .h5p-vtabs .add-entity", "on": "right" },
+        "scrollTo": true
+      },
+      {
+        "text": "tourAddSummaryScreen",
+        "attachTo": { "element": ".field-name-addSummaryScreen", "on": "top" },
+        "scrollTo": true
+      }
+    ],
+    "options": {
+      "id": "h5p-editor-idea-board-initial-v1"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "libraryStrings": {
+    "tourButtonStart": "Tour",
+    "tourButtonExit": "Beenden",
+    "tourButtonDone": "Fertig",
+    "tourButtonBack": "Zurück",
+    "tourButtonNext": "Weiter",
+    "tourWelcome": "<p>Diese Tour führt durch die wichtigsten Funktionen des Idea Board Exercises.</p><p>Du kannst sie jederzeit starten, indem du auf den Tour-Button in der oberen rechten Ecke klickst.</p><p>Klicke auf <strong>\"Beenden\"</strong>, um sie zu überspringen oder auf <strong>\"Weiter\"</strong>, um mit ihr fortzufahren.</p>",
+    "tourTaskDescription": "<p>Trage hier den <strong>Arbeitsauftrag</strong> ein. Er wird nachher neben der Boardfläche angezeigt.</p><p>Wenn Deine Aufgabe aus mehreren Schritten besteht, kannst Du ab dem zweiten Board Du optional wählen, ob die <strong>Inhalte vom vorherigen Board</strong> weiterbenutzt werden sollen. Wenn ja, aktiviere die Option.</p>",
+    "tourTitleHeadline": "<p>Gib nun <strong>Titel</strong> und <strong>Überschrift</strong> für Deine Übung ein und konfiguriere die Boardfläche.</p><p>Du kannst den <strong>Hintergrund</strong> gestalten (Farbe, Bild), den <strong>Kartentyp</strong> (Text, Bild, Audio, Video) auswählen, den Lernende nutzen können, und selbst über die Icons oben rechts auf dem Board <strong>Karten</strong> auf dem Board <strong>anlegen</strong>.</p>",
+    "tourCompletionConditions": "Bei mehrschrittigen Aufgaben kannst Du <strong>Abschlussbedingungen</strong> festlegen, die erfüllt sein müssen, damit Lernende zum nächsten Schritt kommen.",
+    "tourAddIdeaBoard": "Um mehrschrittige Aufgaben zu erstellen, kannst Du <strong>weitere Boards anlegen</strong>.",
+    "tourAddSummaryScreen": "Optional kannst Du am Ende der Übung ein beliebiges <strong>anderes H5P-Element einfügen</strong>."
+  }
+}

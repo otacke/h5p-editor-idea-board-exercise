@@ -15,6 +15,8 @@ export default {
   mode: mode,
   resolve: {
     alias: {
+      '@assets': _resolve(__dirname, 'src/assets'),
+      '@root': _resolve(__dirname, './'),
       '@scripts': _resolve(__dirname, 'src/scripts'),
       '@services': _resolve(__dirname, 'src/scripts/services'),
       '@styles': _resolve(__dirname, 'src/styles')

@@ -1,3 +1,41 @@
 .h5peditor-idea-board-exercise-board {
   display: block;
 }
+
+.h5peditor.h5p-ideaboardexercise-editor > .h5peditor-form > .tree > .field-name-extraTitle {
+  position: relative;
+
+  .h5peditor-idea-board-exercise-start-guided-tour {
+    background: transparent;
+    border-color: transparent;
+    border-radius: 4px;
+    color: #666;
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 0;
+
+    &:hover {
+      background: #ddd;
+      color: #333;
+    }
+
+    &:active {
+      background: #ccc;
+      color: #555;
+    }
+
+    /* Workaround for Multiple Choice overriding general outline */
+    &:focus-visible {
+      outline: 2px solid #000;
+    }
+
+    &::before {
+      content: '\f14e';
+      font-family: "H5PFontAwesome4", sans-serif;
+      margin-right: .25rem;
+    }
+  }
+}

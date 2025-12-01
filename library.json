@@ -19,5 +19,12 @@
     {
       "path": "dist/h5peditor-idea-board-exercise-board.css"
     }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.GuidedTour",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
   ]
 }
