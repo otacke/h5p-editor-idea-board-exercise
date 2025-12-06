@@ -2,6 +2,10 @@
   display: block;
 }
 
+body:has(.h5peditor.h5p-ideaboardexercise-editor) .shepherd-step {
+  z-index: 101; /* Workaround for WordPress plugin */
+}
+
 .h5peditor.h5p-ideaboardexercise-editor > .h5peditor-form > .tree > .field-name-extraTitle {
   position: relative;
 
