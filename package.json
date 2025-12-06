@@ -1,6 +1,6 @@
 {
   "name": "h5peditor-idea-board-exercise-board",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Board widget for H5P Idea Board Exercise",
   "private": true,
   "scripts": {
