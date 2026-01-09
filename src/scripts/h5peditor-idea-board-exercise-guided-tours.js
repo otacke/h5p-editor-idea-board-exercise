@@ -20,7 +20,7 @@ const translateTourData = (toursData, translate) => {
       steps: tour.steps.map((step) => {
         const translatedStep = {
           ...step,
-          text: translate(step.text)
+          text: translate(step.text),
         };
 
         if (step.title) {
@@ -30,8 +30,8 @@ const translateTourData = (toursData, translate) => {
         return translatedStep;
       }),
       options: {
-        ...tour.options
-      }
+        ...tour.options,
+      },
     };
 
     if (tour.options.title) {
@@ -89,7 +89,7 @@ export default class GuidedTours {
       exit: translate('tourButtonExit'),
       done: translate('tourButtonDone'),
       back: translate('tourButtonBack'),
-      next: translate('tourButtonNext')
+      next: translate('tourButtonNext'),
     };
 
     if (tour !== undefined) {
